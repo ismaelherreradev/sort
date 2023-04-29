@@ -2,7 +2,6 @@ import { CharactersCollection } from "./CharactersCollection";
 import { NumberCollection } from "./NumbersCollection";
 import { LinkedList } from "./LinkedList";
 
-import { Sorter } from "./Sorter";
 
 const numbersCollections = new NumberCollection([10, 3, -5, 0, 100, 1, 2, 3, 4, 5]);
 
