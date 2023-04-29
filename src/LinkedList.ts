@@ -1,7 +1,7 @@
 class Node {
-  constructor(public data: number, public next: Node | null = null) {}
+  next: Node | null = null;
+  constructor(public data: number) {}
 }
-
 
 export class LinkedList {
   head: Node | null = null;
@@ -36,7 +36,7 @@ export class LinkedList {
       node = node.next;
     }
 
-    return length;
+    return length - 1;
   }
 
   at(index: number): Node {
@@ -64,11 +64,18 @@ export class LinkedList {
       throw new Error("List is empty");
     }
 
+   
+   try {
+    this.at(leftIndex).data
+   } catch (error) {
+      leftIndex = leftIndex + 1;
+   }
+
     return this.at(leftIndex).data > this.at(rightIndex).data;
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const leftNode = this.at(leftIndex);
+    let leftNode = this.at(leftIndex);
     const rightNode = this.at(rightIndex);
 
     const leftHand = leftNode.data;

@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinkedList = void 0;
 class Node {
-    constructor(data, next = null) {
+    constructor(data) {
         this.data = data;
-        this.next = next;
+        this.next = null;
     }
 }
 class LinkedList {
@@ -33,7 +33,7 @@ class LinkedList {
             length++;
             node = node.next;
         }
-        return length;
+        return length - 1;
     }
     at(index) {
         if (!this.head) {
@@ -54,10 +54,16 @@ class LinkedList {
         if (!this.head) {
             throw new Error("List is empty");
         }
+        try {
+            this.at(leftIndex).data;
+        }
+        catch (error) {
+            leftIndex = leftIndex + 1;
+        }
         return this.at(leftIndex).data > this.at(rightIndex).data;
     }
     swap(leftIndex, rightIndex) {
-        const leftNode = this.at(leftIndex);
+        let leftNode = this.at(leftIndex);
         const rightNode = this.at(rightIndex);
         const leftHand = leftNode.data;
         leftNode.data = rightNode.data;
