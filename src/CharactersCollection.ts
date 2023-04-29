@@ -1,6 +1,5 @@
 import { Sorter } from "./Sorter";
 
-
 export class CharactersCollection extends Sorter {
   constructor(public data: string) {
     super();
@@ -11,10 +10,6 @@ export class CharactersCollection extends Sorter {
   }
 
   compare(leftIndex: number, rightIndex: number): boolean {
-    if (this.data[leftIndex] === undefined) {
-      return this.data[leftIndex + 1].toLowerCase() > this.data[rightIndex].toLowerCase();
-    }
-
     return this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase();
   }
 

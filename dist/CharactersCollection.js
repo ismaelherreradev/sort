@@ -11,9 +11,6 @@ class CharactersCollection extends Sorter_1.Sorter {
         return this.data.length;
     }
     compare(leftIndex, rightIndex) {
-        if (this.data[leftIndex] === undefined) {
-            return this.data[leftIndex + 1].toLowerCase() > this.data[rightIndex].toLowerCase();
-        }
         return this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase();
     }
     swap(leftIndex, rightIndex) {

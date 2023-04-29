@@ -56,12 +56,6 @@ class LinkedList extends Sorter_1.Sorter {
         if (!this.head) {
             throw new Error("List is empty");
         }
-        try {
-            this.at(leftIndex).data;
-        }
-        catch (error) {
-            leftIndex = leftIndex + 1;
-        }
         return this.at(leftIndex).data > this.at(rightIndex).data;
     }
     swap(leftIndex, rightIndex) {

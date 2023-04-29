@@ -67,13 +67,6 @@ export class LinkedList extends Sorter {
       throw new Error("List is empty");
     }
 
-   
-   try {
-    this.at(leftIndex).data
-   } catch (error) {
-      leftIndex = leftIndex + 1;
-   }
-
     return this.at(leftIndex).data > this.at(rightIndex).data;
   }
 
